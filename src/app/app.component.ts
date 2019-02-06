@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Valor do app.component.ts';
+  // Ctrl + D ou F2 ajuda na refatoração de códegos
+  private _isNewEmailFormOpen = false
+
+  emails = [
+    {assunto: 'Sei la', destinatario: 'mario@cmail.com.br', conteudo: 'alo alo w brazil'},
+    {assunto: 'Sei la 2', destinatario: 'amanda@cmail.com.br', conteudo: 'alo alo w brazil'}
+  ];
+
+  toggleNewEmailForm() {
+    console.log('alooo');
+    this._isNewEmailFormOpen = !this._isNewEmailFormOpen
+  }
+
+  get isNewEmailFormOpen() {
+    return this._isNewEmailFormOpen
+  }
+
 }

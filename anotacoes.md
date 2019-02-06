@@ -30,7 +30,12 @@
     - https://www.polyfill.io/
 
  
+## Performance
+- https://kraken.io/
+- https://tinypng.com/
 
+- Faz as magicas gerais de performance no angular
+  - https://webpack.js.org/
 
 ## Deploy
 - Pegar o projeto
@@ -59,3 +64,25 @@ app.listen(4000)
 ## Testes
 - e2e
   - https://www.cypress.io/
+
+## Links Uteis
+- https://novatec.com.br/livros/nodejs-2ed/
+- https://pt.coursera.org/learn/aprender
+- https://www.casadocodigo.com.br/products/livro-oo-solid
+
+
+==========
+
+- Dando vida para o menu
+
+
+## Usuario
+- Usuario clica no botão
+  - Espera que o menu abra
+
+## Dev
+- Colocar um onclick
+  - chamar o menu via css
+  - javascript + css
+  - Só css puro
+

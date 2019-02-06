@@ -9,4 +9,16 @@ import { Component } from "@angular/core";
     './header.component.css',
   ]
 })
-export class CmailHeaderComponent {}
+export class CmailHeaderComponent {
+  tituloDaPagina = 'Título teste';
+  private _ativaMenu = false;
+
+  toggleMenu() {
+    // this.tituloDaPagina = 'Novo valor';
+    this._ativaMenu = !this._ativaMenu;
+  }
+
+  get isMenuOpen() {
+    return this._ativaMenu;
+  }
+}
