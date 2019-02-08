@@ -69,7 +69,24 @@ app.listen(4000)
 - https://novatec.com.br/livros/nodejs-2ed/
 - https://pt.coursera.org/learn/aprender
 - https://www.casadocodigo.com.br/products/livro-oo-solid
+- https://angular.io/guide/architecture
+- https://www.agiliq.com/blog/2017/04/how-script-ordering-works-angular-app/
+- A Dimensão do TEMPO para Iniciantes em Programação | Série "Começando aos 40": https://www.youtube.com/watch?v=Qb5b8ZE9tIY
+- Pixelpipeline e o real problema ques os frameworks tentam resolver: https://developers.google.com/web/fundamentals/performance/rendering/#o_funil_de_pixels
+- Parentesco de formularios do Angular no mundo React: https://github.com/jaredpalmer/formik
+- Desafios para converter de JS Puro para Angulers: https://javascript30.com/
+- Paga: https://www.alura.com.br/curso-online-git
+- 0800: https://www.udemy.com/git-e-github-para-iniciantes/
 
+## Bagulhos Anguleiros
+- Angular quer se modular
+  - 
+
+## Dicionariozinho dos Frontistas
+- handle: função que você passa quando tem um escutador de eventos
+- is: é alguma coisa
+- has: tem alguma coisa
+- toggle: Ato de ativar uma coisa/desativar em um código só
 
 ==========
 
