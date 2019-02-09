@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CmailHeaderComponent } from './components/header/cmail-header.component';
@@ -19,7 +19,7 @@ import { CmailFormInputDirective } from './components/cmail-form-group/cmail-for
   // - cadastro
 
 @NgModule({
-  declarations: [ // Declara os componentes
+  declarations: [ // Declara os componentes/diretivas
     AppComponent,
     CmailHeaderComponent,
     InboxComponent,
@@ -28,10 +28,11 @@ import { CmailFormInputDirective } from './components/cmail-form-group/cmail-for
     CmailFormGroupComponent,
     CmailFormInputDirective
   ],
-  imports: [
+  imports: [ // Modulos vem nos imports
     BrowserModule,
     FormsModule,
-    RouterModuleConfigurado
+    RouterModuleConfigurado,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // Define qual começa

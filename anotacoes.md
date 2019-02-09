@@ -77,6 +77,24 @@ app.listen(4000)
 - Desafios para converter de JS Puro para Angulers: https://javascript30.com/
 - Paga: https://www.alura.com.br/curso-online-git
 - 0800: https://www.udemy.com/git-e-github-para-iniciantes/
+- Libs para manipular dados: https://lodash.com/docs/4.17.11#mergeWith
+- Collabcode pare de chutar css: https://www.youtube.com/watch?v=5PS6ku8NzIE&list=PLirko8T4cEmx5eBb1-9j6T6Gl4aBtZ_5x
+- Curso HTML CSS Alura: https://www.alura.com.br/curso-online-introducao-html-css
+- 0800 Apostila caelum: https://www.caelum.com.br/apostila-html-css-javascript/
+- JavaScript: https://www.caelum.com.br/curso-javascript-jquery
+- JavaScript gratuito: https://www.youtube.com/watch?v=093dIOCNeIc&index=1&list=PLQCmSnNFVYnT1-oeDOSBnt164802rkegc
+- Serie clean code do felipe deschamps:   
+  - https://www.youtube.com/watch?v=9w3o9NHXqu0
+  - Livro até o capitulo 4
+  - https://www.casadocodigo.com.br/products/livro-oo-solid
+    - Começa do capitulo sobre criar classes
+- Por onde eu comecei com angular:
+  - https://angular.io/tutorial/toh-pt1
+  - https://www.hackerrank.com/
+
+- Estruturas de dados
+  - https://www.youtube.com/watch?v=HCjDjsHPOco
+  - https://www.hackerrank.com
 
 ## Bagulhos Anguleiros
 - Angular quer se modular

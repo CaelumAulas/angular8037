@@ -32,12 +32,14 @@
             <div class="newEmail__body mdl-card__supporting-text">
               <!-- Form Fields -->
               <!-- [Para] -->
+              <!-- Validação via template -->
               <div class="cmailInputForm">
                 <div [ngClass]="{ 'is-invalid': destinatario.touched && destinatario.invalid }" class="mdl-textfield mdl-textfield--floating-label">
                   <input
                     #destinatario="ngModel"
                     [(ngModel)]="email.destinatario"
                     required email
+                    pattern="3"
                     type="email"
                     name="para"
                     id="para"

@@ -1,14 +1,32 @@
-<form>
-    <cmail-form-group>
-      <input placeholder="Fulano de tal" cmailInput/>
+<form [formGroup]="formCadastro" (submit)="handleCadastraUsuario()">
+    <cmail-form-group [campo]="formCadastro.get('nome')">
+      <input placeholder="Nome" formControlName="nome" cmailInput/>
     </cmail-form-group>
-</form>
+    <cmail-form-group [campo]="formCadastro.get('username')">
+      <input placeholder="Username" formControlName="username" cmailInput/>
+    </cmail-form-group>
+    <cmail-form-group [campo]="formCadastro.get('senha')">
+      <input placeholder="Senha" formControlName="senha" cmailInput/>
+    </cmail-form-group>
+    <cmail-form-group [campo]="formCadastro.get('telefone')">
+      <input placeholder="Telefone" formControlName="telefone" cmailInput/>
+    </cmail-form-group>
+    <cmail-form-group [campo]="formCadastro.get('avatar')">
+      <input placeholder="Avatar" formControlName="avatar" cmailInput/>
+    </cmail-form-group>
 
-id="nome"
-name="nome"
-class="mdl-textfield__input"
+    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"> Cadastrar </button>
+  </form>
+          <!-- <cmail-form-group>
+            <input placeholder="Username" cmailInput/>
+          </cmail-form-group>
+          <cmail-form-group>
+            <input placeholder="Senha" cmailInput/>
+          </cmail-form-group>
+          <cmail-form-group>
+            <input placeholder="Telefone" cmailInput/>
+          </cmail-form-group>
+          <cmail-form-group>
+            <input placeholder="Avatar" cmailInput/>
+          </cmail-form-group> -->
 
-
-Username
-Senha
-Avatar
