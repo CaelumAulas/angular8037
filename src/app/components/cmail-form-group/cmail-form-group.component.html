@@ -1,8 +1,7 @@
 <!-- [Para] -->
 <div class="cmailInputForm">
   <div [ngClass]="{ 'is-invalid': campo.touched && campo.invalid }" class="mdl-textfield mdl-textfield--floating-label">
-    <ng-content></ng-content>
-    <span class="mdl-textfield__error">Informar um Nome é obrigatório!</span>
+    <ng-content ></ng-content>
     <label class="mdl-textfield__label" for="para">{{ valorDaLabel }} </label>
     <span class="mdl-textfield__formline"></span>
   </div>

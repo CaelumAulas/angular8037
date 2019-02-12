@@ -1,22 +1,38 @@
 <form [formGroup]="formCadastro" (submit)="handleCadastraUsuario()">
+    {{ formCadastro.get('nome').errors | json }}
     <cmail-form-group [campo]="formCadastro.get('nome')">
       <input placeholder="Nome" formControlName="nome" cmailInput/>
+      <span *ngIf="formCadastro.get('nome').errors?.required" class="mdl-textfield__error">Informar um Nome é obrigatório!</span>
+      <span *ngIf="formCadastro.get('nome').errors?.minlength" class="mdl-textfield__error">
+        Um nome precisa ter {{ formCadastro.get('nome').errors?.minlength.requiredLength  }} caracteres,
+        você só digitou {{ formCadastro.get('nome').errors?.minlength.actualLength }}
+      </span>
     </cmail-form-group>
+
     <cmail-form-group [campo]="formCadastro.get('username')">
       <input placeholder="Username" formControlName="username" cmailInput/>
     </cmail-form-group>
+
     <cmail-form-group [campo]="formCadastro.get('senha')">
       <input placeholder="Senha" formControlName="senha" cmailInput/>
     </cmail-form-group>
+
     <cmail-form-group [campo]="formCadastro.get('telefone')">
       <input placeholder="Telefone" formControlName="telefone" cmailInput/>
+      <span *ngIf="formCadastro.get('telefone').errors?.required" class="mdl-textfield__error">Informar um Telefone é obrigatório!</span>
+      <span *ngIf="formCadastro.get('telefone').errors?.pattern" class="mdl-textfield__error">O campo telefone precisa ter o padrão 0000-0000 ou 0000-00000 </span>
     </cmail-form-group>
+
+
+    {{ formCadastro.get('avatar').errors | json }}
     <cmail-form-group [campo]="formCadastro.get('avatar')">
-      <input placeholder="Avatar" formControlName="avatar" cmailInput/>
+      <input placeholder="Avatar" #campoUrlAvatar formControlName="avatar" cmailInput/>
     </cmail-form-group>
 
     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"> Cadastrar </button>
   </form>
+
+  <img [src]="campoUrlAvatar.value" />
           <!-- <cmail-form-group>
             <input placeholder="Username" cmailInput/>
           </cmail-form-group>

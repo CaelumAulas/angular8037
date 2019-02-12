@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CmailHeaderComponent } from './components/header/cmail-header.component';
@@ -32,7 +33,8 @@ import { CmailFormInputDirective } from './components/cmail-form-group/cmail-for
     BrowserModule,
     FormsModule,
     RouterModuleConfigurado,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent] // Define qual começa

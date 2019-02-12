@@ -96,6 +96,12 @@ app.listen(4000)
   - https://www.youtube.com/watch?v=HCjDjsHPOco
   - https://www.hackerrank.com
 
+- https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Operadores_Logicos#Short-Circuit_Evaluation
+
+- Como o JavaScript funciona: http://latentflip.com/loupe/?code=CgoKZnVuY3Rpb24gbG9nZ2VyKCkgewogICAgY29uc29sZS5sb2coJ2FsbyBhbG8gdyBicmF6aWwnKQogICAgY29uc29sZS5sb2coJ3Rlc3RlJykKfQoKc2V0VGltZW91dChmdW5jdGlvbigpIHsKICAgIGxvZ2dlcigpICAgIAp9LCA1MDAwKQoKc2V0VGltZW91dChmdW5jdGlvbigpIHsKICAgIGxvZ2dlcigpICAgIAp9LCAyMDAwKQoKc2V0VGltZW91dChmdW5jdGlvbigpIHsKICAgIGxvZ2dlcigpICAgIAp9LCAzMDAwKQoKCmNvbnNvbGUubG9nKCdzYWR1ZGhhcycp!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
+
+- https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=pt-br
+
 ## Bagulhos Anguleiros
 - Angular quer se modular
   - 
