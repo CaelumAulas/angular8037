@@ -25,8 +25,20 @@
 
 
     {{ formCadastro.get('avatar').errors | json }}
+    {{ formCadastro.get('avatar').status }}
+    {{ formCadastro.get('avatar').hasError('urlInvalida') }}
+    {{ formCadastro.get('avatar').errors?.urlInvalida }}
+    <!-- Página 58 -->
+    <!-- Baixem o backend em: https://github.com/caelum/cmail-back -->
+    <!-- Extrai a pastinha para o Desktop -->
+    <!-- Acessa a pasta "cmail-back-master" via terminal -->
+    <!-- Roda o comando "npm install" via terminal -->
+
     <cmail-form-group [campo]="formCadastro.get('avatar')">
       <input placeholder="Avatar" #campoUrlAvatar formControlName="avatar" cmailInput/>
+      <span class="mdl-textfield__error">
+        Passe uma URL válida
+      </span>
     </cmail-form-group>
 
     <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"> Cadastrar </button>

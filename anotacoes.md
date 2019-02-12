@@ -127,3 +127,22 @@ app.listen(4000)
   - javascript + css
   - Só css puro
 
+## Arrow Function vs Function
+function: O this dentro dela, varia de acordo com o contexto de execução
+arrow function: O this é sempre o this do momento de criação da função
+
+## Promise vs Observable
+Promise
+- then, catch
+- Não pode ser cancelada
+
+Observable
+- Qualquer evento assincrono/sincrono como um array
+    - map, filter, reduce...
+
+
+## Dicas de terminal
+pwd (mostra a pasta atual em relação ao caminho do sistema) /Users/omariosouto/Desktop/cmail-front
+cd .. (navega para a pasta anterior a atual)
+ls (lista todos os arquivos/diretorios de uma pasta)
+npm install (instala todas as libs de um projeto javascript)

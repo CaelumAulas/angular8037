@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
@@ -34,15 +34,16 @@ export class CadastroComponent {
       username: new FormControl('', [Validators.required]),
       senha: new FormControl('', [Validators.required]),
       telefone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{4}-[0-9]{4}[0-9]?')]),
-      avatar: new FormControl('', [Validators.required], this.validaImagem.bind(this))
+      avatar: new FormControl('', [Validators.required], this.validaImagem)
    });
   }
+  // Explicar o Bind
+  validaImagem = (formControl) => {
+    console.log('this do validaImagem', this);
 
-  validaImagem(formControl) {
-    console.log(formControl)
     const evento = this.httpClient.head(formControl.value, { observe: 'response' })
     .pipe( // Estruturar nossa lógica aqui no meio
-      map(function(dadoQueVeioDoServer) {
+      map((dadoQueVeioDoServer) => {
         const isValidImage = dadoQueVeioDoServer
                                 .headers
                                 .get('Content-Type').includes('jpeg');
@@ -50,11 +51,12 @@ export class CadastroComponent {
         console.log('isValidImage', isValidImage);
         return isValidImage ? null : { urlInvalida: true };
       }),
-      catchError(function(error) {
+      catchError((error) => {
         console.log(error);
         return [{ urlInvalida: true }];
       })
     )
+
     return evento;
   }
 
