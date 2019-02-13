@@ -1,18 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CmailHeaderComponent } from './components/header/cmail-header.component';
 
 import { InboxComponent } from './modules/inbox/inbox.component';
 import { LoginComponent } from './modules/login/login.component';
-import { CadastroComponent } from './modules/cadastro/cadastro.component';
-import { RouterModuleConfigurado } from './app.routes';
-import { CmailFormGroupComponent } from './components/cmail-form-group/cmail-form-group.component';
-import { CmailFormInputDirective } from './components/cmail-form-group/cmail-form-input.directive';
-
+import { ModuloRoteamento } from './app.routes';
+// Importando o CadastroModule
+// import { CadastroModule } from './modules/cadastro/cadastro.module';
 // Instalar o angular schematics
 // Criar os componentes:
   // - inbox
@@ -25,16 +22,12 @@ import { CmailFormInputDirective } from './components/cmail-form-group/cmail-for
     CmailHeaderComponent,
     InboxComponent,
     LoginComponent,
-    CadastroComponent,
-    CmailFormGroupComponent,
-    CmailFormInputDirective
   ],
   imports: [ // Modulos vem nos imports
     BrowserModule,
     FormsModule,
-    RouterModuleConfigurado,
-    ReactiveFormsModule,
-    HttpClientModule
+    ModuloRoteamento,
+    // CadastroModule,
   ],
   providers: [],
   bootstrap: [AppComponent] // Define qual começa

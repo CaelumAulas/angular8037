@@ -146,3 +146,14 @@ pwd (mostra a pasta atual em relação ao caminho do sistema) /Users/omariosouto
 cd .. (navega para a pasta anterior a atual)
 ls (lista todos os arquivos/diretorios de uma pasta)
 npm install (instala todas as libs de um projeto javascript)
+
+## Tecnologias malucas que a galera usa
+- https://www.howtographql.com/
+
+## Testes de performance
+- https://testmysite.thinkwithgoogle.com/intl/pt-br
+
+## Ferramentas de documentar API
+- https://www.getpostman.com
+- https://www.soapui.org/
+- https://swagger.io/

@@ -61,8 +61,24 @@ export class CadastroComponent {
   }
 
   handleCadastraUsuario() {
+    console.log(this.formCadastro.value);
     if (this.formCadastro.valid) {
-      console.log('Manda para o banco de dados');
+      console.log('Manda para o backend mandar para o banco de dados');
+      // DTO (Data Transfer Object)
+      const usuarioDTO = {
+        name: this.formCadastro.value.nome,
+        username: 'omariosouto',
+        password: '123456',
+        phone: '9999-9999',
+        avatar: 'https://avatars0.githubusercontent.com/u/13791385?s=460&v=4'
+      };
+
+      // API Rest
+      this.httpClient.post('http://localhost:3200/users', usuarioDTO, { observe: 'response' })
+        .subscribe((dadosDoServer) => {
+          console.log(dadosDoServer);
+          // Redirect ...
+        });
     } else {
       this.marcarTodosOsCamposComoTocados();
     }
