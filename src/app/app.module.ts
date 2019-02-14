@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CmailHeaderComponent } from './components/header/cmail-header.component';
 
 import { InboxComponent } from './modules/inbox/inbox.component';
-import { LoginComponent } from './modules/login/login.component';
+// import { LoginComponent } from './modules/login/login.component';
 import { ModuloRoteamento } from './app.routes';
 // Importando o CadastroModule
 // import { CadastroModule } from './modules/cadastro/cadastro.module';
@@ -21,7 +21,7 @@ import { ModuloRoteamento } from './app.routes';
     AppComponent,
     CmailHeaderComponent,
     InboxComponent,
-    LoginComponent,
+    // LoginComponent,
   ],
   imports: [ // Modulos vem nos imports
     BrowserModule,

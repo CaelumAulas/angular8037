@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CadastroComponent } from './cadastro.component';
-import { CmailFormGroupComponent } from 'src/app/components/cmail-form-group/cmail-form-group.component';
-import { CmailFormInputDirective } from 'src/app/components/cmail-form-group/cmail-form-input.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CadastroRoutes } from './cadastro.routes';
+import { SharedThingsModule } from 'src/app/shared/shared-things.module';
+
 @NgModule({
-  declarations: [
+  declarations: [// Todos os componentes acessíveis entre os componentes desse módulo
     CadastroComponent,
-    CmailFormGroupComponent,
-    CmailFormInputDirective
   ],
   imports: [
     CommonModule, // Ele que traz o ngIf, for e os pipes default
     HttpClientModule,
     ReactiveFormsModule,
+    SharedThingsModule,
     CadastroRoutes
   ]
 })
