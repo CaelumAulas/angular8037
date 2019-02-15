@@ -10,6 +10,7 @@ import { InboxComponent } from './modules/inbox/inbox.component';
 import { ModuloRoteamento } from './app.routes';
 import { AuthGuardGeral } from './shared/auth/auth-guard-geral';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailService } from './modules/inbox/services/email.service';
 // Importando o CadastroModule
 // import { CadastroModule } from './modules/cadastro/cadastro.module';
 // Instalar o angular schematics
@@ -32,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
     // CadastroModule,
   ],
-  providers: [ AuthGuardGeral ],
+  providers: [ AuthGuardGeral, EmailService ],
   bootstrap: [AppComponent] // Define qual começa
 })
 export class AppModule { }

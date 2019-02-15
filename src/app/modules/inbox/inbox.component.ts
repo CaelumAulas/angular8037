@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { EmailService } from './services/email.service';
 
 
 @Component({
@@ -9,7 +10,9 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './inbox.component.html',
 })
 export class InboxComponent {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private emailService: EmailService, ) {}
+
+
 
   // Ctrl + D ou F2 ajuda na refatoração de códegos
   private _isNewEmailFormOpen = false;
@@ -20,37 +23,28 @@ export class InboxComponent {
   ];
 
   email = {
-    conteudo: '',
-    destinatario: '',
-    assunto: '',
+    conteudo: 'asuhasdu',
+    destinatario: 'omariosouto@cmail.com.br',
+    assunto: 'Teste 2',
   };
 
   handleCriarEmail(infosDoEvento: Event, formNovoEmail: NgForm) {
    infosDoEvento.preventDefault();
-   if (formNovoEmail.invalid) {
-     return;
-   }
-
-
+   if (formNovoEmail.invalid) { return; }
    const emailDTO = {
     to: this.email.destinatario,
     subject: this.email.assunto,
     content: this.email.conteudo
    };
-   this.httpClient.post('http://localhost:3200/emails', emailDTO, {
-     headers: {
-       authorization: localStorage.getItem('TOKEN')
-     }
-   })
+
+   this.emailService.criarEmail(emailDTO)
     .subscribe((dadosDoServer) => {
-      console.log(dadosDoServer);
       this.emails.push(this.email);
       formNovoEmail.resetForm(this.email = { conteudo: '', destinatario: '', assunto: '', });
     });
   }
 
   toggleNewEmailForm() {
-    console.log('alooo');
     this._isNewEmailFormOpen = !this._isNewEmailFormOpen;
   }
 
