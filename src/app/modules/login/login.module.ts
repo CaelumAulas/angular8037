@@ -5,9 +5,13 @@ import { SharedThingsModule } from 'src/app/shared/shared-things.module';
 import { LoginRoutes } from './login.routes';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './services/login.service';
 
 
 @NgModule({
+  providers: [
+    LoginService
+  ],
   declarations: [
     LoginComponent
   ],

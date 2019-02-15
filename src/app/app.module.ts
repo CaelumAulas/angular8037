@@ -8,6 +8,8 @@ import { CmailHeaderComponent } from './components/header/cmail-header.component
 import { InboxComponent } from './modules/inbox/inbox.component';
 // import { LoginComponent } from './modules/login/login.component';
 import { ModuloRoteamento } from './app.routes';
+import { AuthGuardGeral } from './shared/auth/auth-guard-geral';
+import { HttpClientModule } from '@angular/common/http';
 // Importando o CadastroModule
 // import { CadastroModule } from './modules/cadastro/cadastro.module';
 // Instalar o angular schematics
@@ -27,9 +29,10 @@ import { ModuloRoteamento } from './app.routes';
     BrowserModule,
     FormsModule,
     ModuloRoteamento,
+    HttpClientModule
     // CadastroModule,
   ],
-  providers: [],
+  providers: [ AuthGuardGeral ],
   bootstrap: [AppComponent] // Define qual começa
 })
 export class AppModule { }

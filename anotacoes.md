@@ -157,3 +157,25 @@ npm install (instala todas as libs de um projeto javascript)
 - https://www.getpostman.com
 - https://www.soapui.org/
 - https://swagger.io/
+
+
+## Fluxo para criar uma feature (ou não decide ai)
+[view]
+- Vincular os campos com um objeto que esteja no controller
+
+[controller]
+- Validar se o formulário está valido
+    - Garantir que nenhum dado nullo seja passado para a próxima camada
+- Criar o DTO que mapeia o dado da view, para o que espearamos
+no backend 
+
+[regrasdenegócio]
+- Criar a camada de serviço 
+    - recuperar o token (talve nao precise sempre)
+- Faz a lógica do seu negócio.com
+
+===
+
+- https://www.caelum.com.br/apostila-java-orientacao-objetos/#null
+- https://www.casadocodigo.com.br/products/livro-oo-solid
+- https://www.amazon.com.br/Implementando-Domain-Driven-design-Vernon/dp/8576089521/ref=pd_lpo_sbs_14_t_0?_encoding=UTF8&psc=1&refRID=B1M3BBZRB0H8J0VRH4SP

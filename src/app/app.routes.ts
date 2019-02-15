@@ -4,6 +4,7 @@ import { CadastroComponent } from './modules/cadastro/cadastro.component'
 import { InboxComponent } from './modules/inbox/inbox.component'
 import { LoginComponent } from './modules/login/login.component'
 import { NgModule } from '@angular/core';
+import { AuthGuardGeral } from './shared/auth/auth-guard-geral';
 
 
 // Trabalhar com angular === Progrmação Orientada a Configuração
@@ -17,16 +18,13 @@ const rotas: Routes = [
   {
     path: '',
     loadChildren: 'src/app/modules/login/login.module#LoginModule'
-    // component: LoginComponent
-    // 1 - Cria o login module
-      // importa o FormsModule ao invés do ReactiveFormsModule
-    // 2 - Cria o Login Routing (como forChild)
-    // 3 - Chama o Login Routing dentro do login module
-    // 4 - Reinicia o processo do servidor de desenvolvimento
   },
   { path: 'login', redirectTo: '' }, // faz um redirect (sempre manter urls consistentes)
   { path: 'cadastro', loadChildren: 'src/app/modules/cadastro/cadastro.module#CadastroModule' },
-  { path: 'inbox', component: InboxComponent },
+  {
+    path: 'inbox', component: InboxComponent,
+    canActivate: [ AuthGuardGeral ]
+  },
   { path: '**', redirectTo: '' }, // Ou cria uma página 404
 ];
 
