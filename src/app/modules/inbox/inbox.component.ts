@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -9,24 +9,31 @@ import { EmailService } from './services/email.service';
   selector: 'inbox-component',
   templateUrl: './inbox.component.html',
 })
-export class InboxComponent {
-  constructor(private emailService: EmailService, ) {}
-
-
+export class InboxComponent implements OnInit {
+  constructor(private emailService: EmailService, ) {
+    console.log('componente carregou');
+  }
 
   // Ctrl + D ou F2 ajuda na refatoração de códegos
   private _isNewEmailFormOpen = false;
 
-  emails = [
-    {assunto: 'Sei la', destinatario: 'mario@cmail.com.br', conteudo: 'alo alo w brazil'},
-    {assunto: 'Sei la 2', destinatario: 'amanda@cmail.com.br', conteudo: 'alo alo w brazil'}
-  ];
+  emails = [];
 
   email = {
     conteudo: 'asuhasdu',
     destinatario: 'omariosouto@cmail.com.br',
     assunto: 'Teste 2',
   };
+
+
+  ngOnInit() { // Componente terminou de montar
+    this.emailService.pegaTodos()
+      .subscribe((dadosDoServer: Array<any>) => {
+        console.log('Emails chegaram!', );
+        this.emails = dadosDoServer;
+      });
+    console.log('componente carregou oficial,');
+  }
 
   handleCriarEmail(infosDoEvento: Event, formNovoEmail: NgForm) {
    infosDoEvento.preventDefault();
