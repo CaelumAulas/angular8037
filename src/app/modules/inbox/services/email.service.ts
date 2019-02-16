@@ -2,17 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-class Email {
+export class Email {
   assunto: string;
   destinatario: string;
   conteudo: string;
   dataCriacao: string;
-
   constructor(assunto, destinatario, conteudo, dataCriacao) {
     this.assunto = assunto;
     this.destinatario = destinatario;
     this.conteudo = conteudo;
-    this.dataCriacao = dataCriacao;
+    this.dataCriacao = dataCriacao.formt;
   }
 }
 
@@ -20,7 +19,6 @@ class Email {
 export class EmailService {
   constructor(private httpClient: HttpClient) {}
   API_URL: string = 'http://localhost:3200/emails';
-
   DEFAULT_HEADERS: object = {
     headers: { authorization: localStorage.getItem('TOKEN') }
   };

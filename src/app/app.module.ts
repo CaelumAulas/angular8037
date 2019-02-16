@@ -11,6 +11,7 @@ import { ModuloRoteamento } from './app.routes';
 import { AuthGuardGeral } from './shared/auth/auth-guard-geral';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailService } from './modules/inbox/services/email.service';
+import { FiltraPorAssuntoPipe } from './shared/pipes/filtraPorAssunto.pipe';
 // Importando o CadastroModule
 // import { CadastroModule } from './modules/cadastro/cadastro.module';
 // Instalar o angular schematics
@@ -24,6 +25,7 @@ import { EmailService } from './modules/inbox/services/email.service';
     AppComponent,
     CmailHeaderComponent,
     InboxComponent,
+    FiltraPorAssuntoPipe
     // LoginComponent,
   ],
   imports: [ // Modulos vem nos imports

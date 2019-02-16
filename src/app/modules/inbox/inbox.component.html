@@ -1,13 +1,16 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-  <cmail-header></cmail-header>
+  <cmail-header tituloDaPagina="asddsaddsdsd"></cmail-header>
   <main class="mdl-layout__content">
     <div class="page-content">
+      <input (input)="0" #campoBusca type="text" />
       <ul>
         <!-- Diretiva: um atributo que extende o template do angular -->
-        <li *ngFor="let email of emails">
+        <li *ngFor="let email of emails | filtraPorAssunto: valorDoFiltro ">
           {{ email.assunto }}
           {{ email.destinatario }}
           {{ email.conteudo }}
+          {{ email.dataCriacao | date: 'dd/MM/yyyy'  }}
+          <!-- https://angular.io/api/common/DatePipe -->
         </li>
       </ul>
 

@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { HeaderDataService } from './header-data.service';
 
 
 @Component({
@@ -10,8 +11,12 @@ import { Component, Input } from "@angular/core";
   ]
 })
 export class CmailHeaderComponent {
-  tituloDaPagina = 'Título teste';
+  @Input() tituloDaPagina;
   private _ativaMenu = false;
+
+  constructor(private headerDataService: HeaderDataService) {
+
+  }
 
   toggleMenu() {
     // this.tituloDaPagina = 'Novo valor';
@@ -20,5 +25,10 @@ export class CmailHeaderComponent {
 
   get isMenuOpen() {
     return this._ativaMenu;
+  }
+
+  handleInputSearch(valorAtualDaBusca: string) {
+    // BroadCast de dados via serviço
+    this.headerDataService.updateHeaderSearchValue(valorAtualDaBusca);
   }
 }

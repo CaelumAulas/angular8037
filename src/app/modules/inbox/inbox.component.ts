@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { EmailService } from './services/email.service';
+import { EmailService, Email } from './services/email.service';
+import { HeaderDataService } from 'src/app/components/header/header-data.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { EmailService } from './services/email.service';
   templateUrl: './inbox.component.html',
 })
 export class InboxComponent implements OnInit {
-  constructor(private emailService: EmailService, ) {
+  constructor(private emailService: EmailService, private headerDataService: HeaderDataService) {
     console.log('componente carregou');
   }
 
@@ -25,30 +26,36 @@ export class InboxComponent implements OnInit {
     assunto: 'Teste 2',
   };
 
+  valorDoFiltro = '';
 
   ngOnInit() { // Componente terminou de montar
     this.emailService.pegaTodos()
       .subscribe((dadosDoServer: Array<any>) => {
-        console.log('Emails chegaram!', );
+        console.log('Emails chegaram!');
         this.emails = dadosDoServer;
       });
+
+    this.headerDataService.listenHeaderSearchChanges()
+      .subscribe((valor) => {
+        this.valorDoFiltro = valor
+      })
     console.log('componente carregou oficial,');
   }
 
   handleCriarEmail(infosDoEvento: Event, formNovoEmail: NgForm) {
-   infosDoEvento.preventDefault();
-   if (formNovoEmail.invalid) { return; }
-   const emailDTO = {
-    to: this.email.destinatario,
-    subject: this.email.assunto,
-    content: this.email.conteudo
-   };
+    infosDoEvento.preventDefault();
+    if (formNovoEmail.invalid) { return; }
+    const emailDTO = {
+      to: this.email.destinatario,
+      subject: this.email.assunto,
+      content: this.email.conteudo
+    };
 
-   this.emailService.criarEmail(emailDTO)
-    .subscribe((dadosDoServer) => {
-      this.emails.push(this.email);
-      formNovoEmail.resetForm(this.email = { conteudo: '', destinatario: '', assunto: '', });
-    });
+    this.emailService.criarEmail(emailDTO)
+      .subscribe((dadosDoServer) => {
+        this.emails.push(this.email);
+        formNovoEmail.resetForm(this.email = { conteudo: '', destinatario: '', assunto: '', });
+      });
   }
 
   toggleNewEmailForm() {
@@ -57,5 +64,12 @@ export class InboxComponent implements OnInit {
 
   get isNewEmailFormOpen() {
     return this._isNewEmailFormOpen;
+  }
+
+
+
+
+  handleFiltraEmails(event: Event) {
+    // this.emails = listaAtualizada;
   }
 }
